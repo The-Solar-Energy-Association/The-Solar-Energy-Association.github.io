@@ -1,8 +1,16 @@
 :root {
 	/* Color variables. */
-	--splash-primary:    #4BA4ED;  /* Blue.       */
-	--splash-secondary:  #ED4B76;  /* Pink.       */
-	--grey-dim:          #424549;  /* Grey dim.   */
+	--nav-text:          #FFFFFF;  /* White              */
+	--splash-primary:    #4BA4ED;  /* Blue               */
+	--splash-secondary:  #ED4B76;  /* Pink               */
+	--grey-dim:          #424549;  /* Grey dim           */
+	--sunny-a:           #E1CF26;  /* Sunny color A      */
+	--sunny-b:           #F6BF58;  /* Sunny color B      */
+}
+
+@font-face {
+	font-family: Roboto Slab;
+	src: url("/assets/ttf/RobotoSlab-VariableFont_wght.ttf");
 }
 
 * {
@@ -13,6 +21,14 @@
 
 body {
 	height: 100%;
+}
+
+#navbar {
+	position: fixed;
+	transition-duration: 0.7s;
+	height: 0px;
+	width: 100%;
+	z-index: 2;
 }
 
 #splash {
@@ -37,4 +53,47 @@ body {
 	background-color: var(--grey-dim);
 	height: 64px;
 	width: 100%;
+}
+
+.navbar-sticky {
+	background-color: black !important;
+	height: 64px !important;
+}
+
+.navbar-sticky .navbar-links .navbar-link {
+	margin-top: -22px;
+}
+
+.navbar-sticky .navbar-links .selected {
+	padding-bottom: 0px;
+}
+
+.navbar-links {
+	display: flex;
+	float: right;
+	list-style-type: none;
+	margin-top: 32px;
+	margin-right: 64px;
+	transition-duration: 0.7s;
+}
+
+.navbar-link {
+	align-items: center;
+	color: var(--nav-text);
+	display: flex;
+	font-family: Roboto Slab;
+	font-size: 30px;
+	justify-content: center;
+	letter-spacing: 0.12em;
+	line-height: 40px;
+	margin-right: 32px;
+	text-decoration: none;
+	transition-duration: 0.7s;
+}
+
+.selected {
+	border-bottom-width: 4px;
+	border-bottom-style: solid;
+	border-image: linear-gradient(180deg, var(--sunny-a) 0%, var(--sunny-b) 100%) 1;
+	padding-bottom: 4px;
 }
